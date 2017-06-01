@@ -14,7 +14,7 @@ public class Book
 	private String location;
 	
 	//是否已借
-	private boolean isborrow;
+	private boolean isBorrow;
 	
 	//记录创建时间
 	private Date createTime;
@@ -49,14 +49,14 @@ public class Book
 		this.location = location;
 	}
 
-	public boolean isIsborrow()
+	public boolean isIsBorrow()
 	{
-		return isborrow;
+		return isBorrow;
 	}
 
-	public void setIsborrow(boolean isborrow)
+	public void setIsBorrow(boolean isBorrow)
 	{
-		this.isborrow = isborrow;
+		this.isBorrow = isBorrow;
 	}
 
 	public Date getCreateTime()
