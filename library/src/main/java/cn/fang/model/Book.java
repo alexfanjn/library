@@ -1,0 +1,56 @@
+package cn.fang.model;
+
+public class Book
+{
+	//书籍id
+	private int id;
+	
+	//书籍名字
+	private String bookName;
+	
+	//书籍存放位置
+	private String location;
+	
+	//是否已借
+	private boolean isborrow;
+
+	public int getId()
+	{
+		return id;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public String getBookName()
+	{
+		return bookName;
+	}
+
+	public void setBookName(String bookName)
+	{
+		this.bookName = bookName;
+	}
+
+	public String getLocation()
+	{
+		return location;
+	}
+
+	public void setLocation(String location)
+	{
+		this.location = location;
+	}
+
+	public boolean isIsborrow()
+	{
+		return isborrow;
+	}
+
+	public void setIsborrow(boolean isborrow)
+	{
+		this.isborrow = isborrow;
+	}
+}
