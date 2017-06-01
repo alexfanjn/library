@@ -1,5 +1,7 @@
 package cn.fang.model;
 
+import java.sql.Date;
+
 public class Book
 {
 	//书籍id
@@ -13,6 +15,9 @@ public class Book
 	
 	//是否已借
 	private boolean isborrow;
+	
+	//记录创建时间
+	private Date createTime;
 
 	public int getId()
 	{
@@ -52,5 +57,15 @@ public class Book
 	public void setIsborrow(boolean isborrow)
 	{
 		this.isborrow = isborrow;
+	}
+
+	public Date getCreateTime()
+	{
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime)
+	{
+		this.createTime = createTime;
 	}
 }
