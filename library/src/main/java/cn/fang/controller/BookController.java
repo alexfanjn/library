@@ -13,15 +13,19 @@ import cn.fang.service.imp.BookServiceImp;
 
 @Controller
 @RequestMapping("/book")
-public class BookController
-{
+public class BookController{
 	@Resource
 	public BookService bookService;
 	
 	@RequestMapping(value="/addBook",method=RequestMethod.POST)
 	@ResponseBody
-	public String addBook(Book book)
-	{
+	public String addBook(Book book){
 		return bookService.addBook(book);
+	}
+	
+	@RequestMapping(value="/updateBook",method=RequestMethod.POST)
+	@ResponseBody
+	public String updateBook(Book book){
+		return bookService.updateBook(book);
 	}
 }

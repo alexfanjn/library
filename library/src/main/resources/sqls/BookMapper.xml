@@ -9,11 +9,30 @@
 	<result property="" column=""></result>
 	
 </resultMap>
+
+<select id="countById" parameterType="int">
+	select count(*)
+	from book
+	where b_id = #{id};
+<!-- 是否需要返回值类型 -->
+</select>
+
+<update id="updateBookById" parameterType="cn.fang.model.Book">
+	update book b
+	set
+		b.b_bookName = #{bookName},
+		b.b_location = #{location},
+		b.b_isBorrow = #{isBorrow},
+		b.b_createTime = #{createTime}
+	where b.b_id = #{id}；
+</update>
 	
 <insert id="addBook" parameterType="cn.fang.model.Book">
 	insert into 
 	book(b_bookName,b_location,b_isBorrow,b_createTime)
 	values(#{bookName},#{location},#{isBorrow},#{createTime});
 </insert>
+	
+
 	
 </mapper>
