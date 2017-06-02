@@ -8,4 +8,7 @@ public interface BookService{
 
 	//更新已有记录
 	public String updateBook(Book book);
+	
+	//根据id删除书籍记录
+	public String deleteBookById(int id);
 }

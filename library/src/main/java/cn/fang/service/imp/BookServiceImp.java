@@ -30,8 +30,7 @@ public class BookServiceImp implements BookService{
 	}
 
 	@Override
-	public String updateBook(Book book)
-	{
+	public String updateBook(Book book){
 		//首先根据id查看是否有此条记录
 		int count = bookDao.countById(book.getId());
 		if(count==0)
@@ -42,6 +41,23 @@ public class BookServiceImp implements BookService{
 		int count1 = bookDao.updateBookById(book);
 		if(count1==1)
 			//修改成功
+			return "200";
+		//服务器出错
+		return "500";
+	}
+
+	@Override
+	public String deleteBookById(int id){
+		// TODO Auto-generated method stub
+		//首先根据id查找是否有对应记录
+		int count = bookDao.countById(id);
+		if(count == 0)
+			//未找到对应记录
+			return "301";
+		//找到对应记录
+		int count1 = bookDao.deleteBookById(id);
+		if(count1==1)
+			//删除成功
 			return "200";
 		//服务器出错
 		return "500";

@@ -13,4 +13,6 @@ public interface BookDao
 	//根据id更新记录
 	public int updateBookById(Book book);
 	
+	//根据id删除记录
+	public int deleteBookById(int id);
 }

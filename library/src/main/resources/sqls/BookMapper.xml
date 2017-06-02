@@ -33,6 +33,11 @@
 	values(#{bookName},#{location},#{isBorrow},#{createTime});
 </insert>
 	
+	
+<delete id="deleteBookById" parameterType="int">
+	delete from book
+	where b_id = #{id};
+</delete>
 
 	
 </mapper>
