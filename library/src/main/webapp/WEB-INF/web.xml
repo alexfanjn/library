@@ -42,9 +42,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DispatcherServlet</servlet-name>
-		<!-- 配置url的拦截形式('/'是不拦截jsp,'/*'连jsp也会拦截.) -->
-		<!-- <url-pattern>/</url-pattern> -->
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/book/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>/user/*</url-pattern>
 	</servlet-mapping>
 
 	<display-name>=libraryss</display-name>

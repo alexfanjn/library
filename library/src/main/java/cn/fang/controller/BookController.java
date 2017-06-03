@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.fang.model.Book;
 import cn.fang.service.BookService;
-import cn.fang.service.imp.BookServiceImp;
 
 @Controller
 @RequestMapping("/book")

@@ -46,7 +46,7 @@
 </insert>
 	
 	
-<delete id="deleteBookById" parameterType="int" resultMap="BookResultMap">
+<delete id="deleteBookById" parameterType="int">
 	delete from book
 	where b_id = #{id};
 </delete>
