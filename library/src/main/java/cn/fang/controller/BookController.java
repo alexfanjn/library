@@ -1,5 +1,8 @@
 package cn.fang.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -47,5 +50,14 @@ public class BookController{
 		Book book = new Book();
 		book = bookService.getBookById(id);
 		return book;
+	}
+	
+	//根据页数获取书籍相关信息
+	@RequestMapping(value="/getBookByPage",method=RequestMethod.GET)
+	@ResponseBody
+	public List<Book> getBooks(@RequestParam int page){
+		List<Book> books = new ArrayList<>();
+		books = bookService.getBooks(page);
+		return books;
 	}
 }

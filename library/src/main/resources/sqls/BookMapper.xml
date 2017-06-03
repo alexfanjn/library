@@ -17,10 +17,16 @@
 <!-- 是否需要返回值类型 -->
 </select>
 
-<select id="getBookById" parameterType="int" parameterType="cn.fang.model.Book">
+<select id="getBookById" parameterType="int" resultMap="BookResultMap">
 	select * 
 	from book
 	where b_id = #{id};
+</select>
+
+<select id="getBooks" parameterType="int" resultMap="BookResultMap">
+	select *
+	from book
+	limit #{count},10;
 </select>
 
 <update id="updateBookById" parameterType="cn.fang.model.Book">

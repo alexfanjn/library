@@ -1,6 +1,7 @@
 package cn.fang.service.imp;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -68,6 +69,14 @@ public class BookServiceImp implements BookService{
 	public Book getBookById(int id)
 	{
 		return bookDao.getBookById(id);
+	}
+
+	@Override
+	public List<Book> getBooks(int page)
+	{
+		//将页数page转化为记录起始条数,此处限定每页10条记录
+		int count = 10 * (page-1);
+		return bookDao.getBooks(count);
 	}
 	
 }

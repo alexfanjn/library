@@ -1,5 +1,7 @@
 package cn.fang.dao;
 
+import java.util.List;
+
 import cn.fang.model.Book;
 
 public interface BookDao
@@ -18,4 +20,7 @@ public interface BookDao
 	
 	//根据id获取对应书籍的具体信息
 	public Book getBookById(int id);
+	
+	//根据记录的起始条数count获取书籍list的相关信息
+	public List<Book> getBooks(int count);
 }
