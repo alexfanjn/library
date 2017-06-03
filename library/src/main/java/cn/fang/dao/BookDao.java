@@ -19,7 +19,7 @@ public interface BookDao
 	public int updateBookById(Book book);
 	
 	//根据id删除记录
-	public int deleteBookById(int id);
+	public boolean deleteBookById(String[] ids);
 	
 	//根据id获取对应书籍的具体信息
 	public Book getBookById(int id);

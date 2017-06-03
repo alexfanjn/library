@@ -16,45 +16,52 @@ import cn.fang.service.BookService;
 
 @Controller
 @RequestMapping("/book")
-public class BookController{
+public class BookController
+{
 	@Resource
 	public BookService bookService;
-	
-	//新增书籍
-	@RequestMapping(value="/addBook.do",method=RequestMethod.POST)
+
+	// 新增书籍
+	@RequestMapping(value = "/addBook.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String addBook(Book book){
+	public String addBook(Book book)
+	{
 		return bookService.addBook(book);
 	}
-	
-	//修改书籍参数
-	@RequestMapping(value="/updateBook",method=RequestMethod.POST)
+
+	// 修改书籍参数
+	@RequestMapping(value = "/updateBook", method = RequestMethod.POST)
 	@ResponseBody
-	public String updateBook(Book book){
+	public String updateBook(Book book)
+	{
 		return bookService.updateBook(book);
 	}
-	
-	//此处应为什么方法?????
-	//根据id删除书籍
-	@RequestMapping(value="/delete",method=RequestMethod.DELETE)
+
+	// 此处应为什么方法?????
+	// 根据id删除书籍
+	@RequestMapping(value = "/deleteBook.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String deleteBook(@RequestParam int id){
-		return bookService.deleteBookById(id);
+	public String deleteBook(@RequestParam(value = "ids", required = true) String ids)
+	{
+		String[] idsArg = ids.split(",");
+		return bookService.deleteBookById(idsArg);
 	}
-	
-	//获取单个书籍的详细信息
-	@RequestMapping(value="/getSingleBook",method=RequestMethod.GET)
+
+	// 获取单个书籍的详细信息
+	@RequestMapping(value = "/getSingleBook", method = RequestMethod.GET)
 	@ResponseBody
-	public Book getSingleBook(@RequestParam int id){
+	public Book getSingleBook(@RequestParam int id)
+	{
 		Book book = new Book();
 		book = bookService.getBookById(id);
 		return book;
 	}
-	
-	//根据页数获取书籍相关信息
-	@RequestMapping(value="/getBookByPage",method=RequestMethod.GET)
+
+	// 根据页数获取书籍相关信息
+	@RequestMapping(value = "/getBookByPage", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Book> getBooks(@RequestParam int page){
+	public List<Book> getBooks(@RequestParam int page)
+	{
 		List<Book> books = new ArrayList<>();
 		books = bookService.getBooks(page);
 		return books;

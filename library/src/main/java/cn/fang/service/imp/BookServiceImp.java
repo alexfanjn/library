@@ -50,10 +50,10 @@ public class BookServiceImp implements BookService
 		return "500";
 	}
 
+	/*
 	@Override
-	public String deleteBookById(int id)
+	public String deleteBookById(String[] id)
 	{
-		// TODO Auto-generated method stub
 		// 首先根据id查找是否有对应记录
 		int count = bookDao.countById(id);
 		if (count == 0)
@@ -66,6 +66,16 @@ public class BookServiceImp implements BookService
 			return "200";
 		// 服务器出错
 		return "500";
+	}
+	*/
+	public String deleteBookById(String[] ids)
+	{
+		if (bookDao.deleteBookById(ids))
+		{
+			return "200";
+		}else{
+			return "500";
+		}
 	}
 
 	// 根据id获取书籍

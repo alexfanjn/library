@@ -12,6 +12,52 @@ function book_add(title, url, w, h) {
 	layer_show(title, url, w, h);
 }
 
+/* 批量删除 */
+function booksDelete() {
+	var obj = $("input[name^='checkbox_']:checked");
+	if (obj.length == 0) {
+		layer.msg('请最少选择一条记录！', {
+			icon : 1,
+			time : 1000
+		});
+		return;
+	}
+	var values = [];
+	for (var i = 0; i < obj.length; i++) {
+		// console.log(obj[i]);
+		values.push(obj[i].value);
+	}
+	var ids = values.join(",");
+	$.ajax({
+		"type" : 'get',
+		"url" : '/library/book/deleteBook.do',
+		"dataType" : "json",
+		"data" : {
+			"ids" : ids
+		},
+		"success" : function(data) {
+			if (data == '200') {
+				table.fnDraw(false);// 刷新表格数据false为当前页数,true为刷新到第一页
+				layer.msg('已删除!', {
+					icon : 1,
+					time : 1000
+				});
+			} else {
+				layer.msg('操作失败!', {
+					icon : 1,
+					time : 1000
+				});
+			}
+		},
+		error : function(){
+			layer.alert('操作有误', {
+				icon : 2,
+				shade : 0.5,
+				time : 3000
+			});
+		}
+	});
+}
 
 function initDataTable() {
 	table = $('.table-sort').dataTable({
