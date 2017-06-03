@@ -10,9 +10,9 @@
 		<result property="createTime" column="b_createTime"></result>
 	</resultMap>
 
-	<select id="countById" parameterType="int">
-		select count(*)
-		from book
+	<select id="countById" parameterType="int" resultType="int">
+		select count(*) 
+		from book 
 		where b_id = #{id};
 		<!-- 是否需要返回值类型 -->
 	</select>
@@ -30,14 +30,11 @@
 	</select>
 
 	<update id="updateBookById" parameterType="cn.fang.model.Book">
-		update book b
-		set
+		update book b 
+		set 
 		b.b_bookName = #{bookName},
-		b.b_location = #{location},
-		b.b_isBorrow =
-		#{isBorrow},
-		b.b_createTime = #{createTime}
-		where b.b_id = #{id}；
+		b.b_location = #{location}
+		where b.b_id = #{id}
 	</update>
 
 	<insert id="addBook" parameterType="cn.fang.model.Book">

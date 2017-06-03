@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import cn.fang.model.Book;
 import cn.fang.service.BookService;
@@ -21,6 +22,15 @@ public class BookController
 	@Resource
 	public BookService bookService;
 
+	@RequestMapping("/showbook.do")
+	public ModelAndView showbook(@RequestParam("id") Integer id)
+	{
+		ModelAndView mv = new ModelAndView("/module/book/book-update.jsp");
+		Book book = bookService.getBookById(id);
+		mv.addObject("book", book);
+		return mv;
+	}
+
 	// 新增书籍
 	@RequestMapping(value = "/addBook.do", method = RequestMethod.POST)
 	@ResponseBody
@@ -30,7 +40,7 @@ public class BookController
 	}
 
 	// 修改书籍参数
-	@RequestMapping(value = "/updateBook", method = RequestMethod.POST)
+	@RequestMapping(value = "/updateBook.do", method = RequestMethod.POST)
 	@ResponseBody
 	public String updateBook(Book book)
 	{

@@ -12,6 +12,11 @@ function book_add(title, url, w, h) {
 	layer_show(title, url, w, h);
 }
 
+/*图书-修改*/
+function book_edit(data) {
+	layer_show("修改图书", "/library/book/showbook.do?id=" + data, "", 510);
+}
+
 /* 批量删除 */
 function booksDelete() {
 	var obj = $("input[name^='checkbox_']:checked");
@@ -95,6 +100,13 @@ function initDataTable() {
 				}, {
 					"mDataProp" : "b_isBorrow",
 					"sClass" : "text-c",
+					"mRender" : function(data, type, full) {
+						if (data == false) {
+							return '<span class="label label-success radius">未借</span>';
+						} else {
+							return '<span class="label label-fail radius">已借</span>';
+						}
+					}
 				}, {
 					"mDataProp" : "b_createTime",
 					"sClass" : "text-c",
@@ -104,14 +116,14 @@ function initDataTable() {
 		"columnDefs" : [// 后加载填充自定义列内容
 		{
 			"targets" : [ 5 ],
-			"data" : "id",
+			"data" : "b_id",
 			"sClass" : "text-c",
 			"mRender" : function(data, type, full) {
 				var html = '';
 				// 编辑商品-按钮
-				html += '<a style="text-decoration: none" onClick="product_edit(\''
+				html += '<a style="text-decoration: none" onClick="book_edit(\''
 						+ data
-						+ '\')" href="javascript:;" title="编辑">';
+						+ '\')" href="javascript:void(0);" title="编辑">';
 				html += '<i class="Hui-iconfont">&#xe6df;</i></a>';
 				return html;
 			}
