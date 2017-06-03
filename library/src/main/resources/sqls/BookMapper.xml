@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.fang.dao.BookDao">
 
-<resultMap type="cn.fang.model.Book" id="BookResultMap">
-	<id property="" column=""></id>
-	<result property="" column=""></result>
-	<result property="" column=""></result>
-	<result property="" column=""></result>
-	
+<resultMap id="BookResultMap" type="cn.fang.model.Book">
+	<id property="id" column="b_id"></id>
+	<result property="bookName" column="b_bookName"></result>
+	<result property="location" column="b_location"></result>
+	<result property="isBorrow" column="b_isBorrow"></result>
+	<result property="createTime" column="b_createTime"></result>
 </resultMap>
 
 <select id="countById" parameterType="int">
@@ -15,6 +15,12 @@
 	from book
 	where b_id = #{id};
 <!-- 是否需要返回值类型 -->
+</select>
+
+<select id="getBookById" parameterType="int" parameterType="cn.fang.model.Book">
+	select * 
+	from book
+	where b_id = #{id};
 </select>
 
 <update id="updateBookById" parameterType="cn.fang.model.Book">
@@ -34,7 +40,7 @@
 </insert>
 	
 	
-<delete id="deleteBookById" parameterType="int">
+<delete id="deleteBookById" parameterType="int" resultMap="BookResultMap">
 	delete from book
 	where b_id = #{id};
 </delete>

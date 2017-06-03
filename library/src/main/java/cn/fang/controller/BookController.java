@@ -33,9 +33,19 @@ public class BookController{
 	}
 	
 	//此处应为什么方法?????
+	//根据id删除书籍
 	@RequestMapping(value="/delete",method=RequestMethod.DELETE)
 	@ResponseBody
 	public String deleteBook(@RequestParam int id){
 		return bookService.deleteBookById(id);
+	}
+	
+	//获取单个书籍的详细信息
+	@RequestMapping(value="/getSingleBook",method=RequestMethod.GET)
+	@ResponseBody
+	public Book getSingleBook(@RequestParam int id){
+		Book book = new Book();
+		book = bookService.getBookById(id);
+		return book;
 	}
 }

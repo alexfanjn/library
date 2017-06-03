@@ -62,5 +62,12 @@ public class BookServiceImp implements BookService{
 		//服务器出错
 		return "500";
 	}
+
+	//根据id获取书籍
+	@Override
+	public Book getBookById(int id)
+	{
+		return bookDao.getBookById(id);
+	}
 	
 }

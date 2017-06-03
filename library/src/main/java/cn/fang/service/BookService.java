@@ -11,4 +11,7 @@ public interface BookService{
 	
 	//根据id删除书籍记录
 	public String deleteBookById(int id);
+	
+	//根据id获得某个书籍的具体信息
+	public Book getBookById(int id);
 }
