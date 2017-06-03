@@ -40,16 +40,20 @@
 		<!-- tomcat启动时就加载servlet -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>DispatcherServlet</servlet-name>
 		<url-pattern>/book/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DispatcherServlet</servlet-name>
 		<url-pattern>/user/*</url-pattern>
+	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
-	<display-name>=libraryss</display-name>
+	<display-name>library</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

@@ -21,7 +21,7 @@ public class BookController{
 	public BookService bookService;
 	
 	//新增书籍
-	@RequestMapping(value="/addBook",method=RequestMethod.POST)
+	@RequestMapping(value="/addBook.do",method=RequestMethod.POST)
 	@ResponseBody
 	public String addBook(Book book){
 		return bookService.addBook(book);

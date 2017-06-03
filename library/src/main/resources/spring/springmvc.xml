@@ -10,8 +10,6 @@
 	<!-- 配置注解驱动(相当于处理器映射器和处理器适配器) -->
 	<mvc:annotation-driven />
 
-	<!-- 配置包扫描器,扫描@Controller注解的类 -->
-	<context:component-scan base-package="cn.fang.controller" />
-	
+	<context:component-scan base-package="cn.fang" />
 	
 </beans>

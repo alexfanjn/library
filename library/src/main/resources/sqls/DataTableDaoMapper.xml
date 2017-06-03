@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.fang.dao.DataTableDao">
+
+	<!-- book表开始 -->
+	<select id="getBookListForPage" parameterType="map" resultType="map">
+		SELECT 
+			* 
+		FROM 
+			book b 
+		ORDER BY b.b_createTime DESC
+	</select>
+
+	<select id="getBookListForPageCount" resultType="int">
+		SELECT COUNT(1) FROM book b 
+	</select>
+	<!-- book表结束 -->
+	
+</mapper>
