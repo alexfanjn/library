@@ -8,7 +8,7 @@ $(function() {// jq
 })
 
 /* 图书-添加 */
-function book_add(title, url, w, h) {
+function user_add(title, url, w, h) {
 	layer_show(title, url, w, h);
 }
 
