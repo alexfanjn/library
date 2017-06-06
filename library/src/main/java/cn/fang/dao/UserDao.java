@@ -16,4 +16,7 @@ public interface UserDao
 	
 	//根据id更新记录
 	public int updateUserById(User user);
+	
+	//根据id删除记录
+	public boolean deleteUsersById(String[] ids);
 }

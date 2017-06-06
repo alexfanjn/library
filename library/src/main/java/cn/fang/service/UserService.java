@@ -10,4 +10,7 @@ public interface UserService
 	
 	//更新已有记录
 	public String updateUser(User user);
+	
+	//根据id删除书籍记录
+	public String deleteUserById(String[] id);
 }

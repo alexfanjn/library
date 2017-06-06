@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.fang.model.Book;
@@ -34,4 +35,12 @@ public class UserController
 		return userService.updateUser(user);
 	}
 	
+	// 根据id删除用户&&批量删除
+	@RequestMapping(value = "/deleteUser.do", method = RequestMethod.GET)
+	@ResponseBody
+	public String deleteUser(@RequestParam(value = "ids", required = true) String ids)
+	{
+		String[] idsArg = ids.split(",");
+		return userService.deleteUserById(idsArg);
+	}
 }

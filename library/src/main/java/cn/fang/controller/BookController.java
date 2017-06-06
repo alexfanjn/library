@@ -47,7 +47,6 @@ public class BookController
 		return bookService.updateBook(book);
 	}
 
-	// 此处应为什么方法?????
 	// 根据id删除书籍
 	@RequestMapping(value = "/deleteBook.do", method = RequestMethod.GET)
 	@ResponseBody

@@ -30,4 +30,16 @@
 	values(#{name},#{major},#{userClass},#{createTime});
 </insert>
 
+<!-- 删除和批量删除 array:表示参数是数组类型 -->
+<delete id="deleteUserById" parameterType="string">
+	DELETE FROM 
+		user 
+	WHERE 
+		u_id 
+	IN 
+	<foreach collection="array" item="bid" open="(" separator="," close=")">
+		#{bid}
+	</foreach>
+</delete>
+
 </mapper>

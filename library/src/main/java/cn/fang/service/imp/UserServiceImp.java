@@ -45,5 +45,15 @@ public class UserServiceImp implements UserService
 		// 服务器出错
 		return "500";
 	}
+	
+	public String deleteUserById(String[] ids)
+	{
+		if (userDao.deleteUsersById(ids))
+		{
+			return "200";
+		}else{
+			return "500";
+		}
+	}
 
 }
