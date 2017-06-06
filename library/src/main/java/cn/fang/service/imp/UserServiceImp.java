@@ -47,7 +47,7 @@ public class UserServiceImp implements UserService
 		return "500";
 	}
 	
-	public String deleteUserById(String[] ids)
+	public String deleteUsersById(String[] ids)
 	{
 		if (userDao.deleteUsersById(ids))
 		{

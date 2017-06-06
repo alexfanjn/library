@@ -35,7 +35,6 @@ public class UserController
 	@ResponseBody
 	public String addUser(User user)
 	{
-		System.out.println("ininininininininin");
 		return userService.addUser(user);
 	}
 	
@@ -53,6 +52,6 @@ public class UserController
 	public String deleteUser(@RequestParam(value = "ids", required = true) String ids)
 	{
 		String[] idsArg = ids.split(",");
-		return userService.deleteUserById(idsArg);
+		return userService.deleteUsersById(idsArg);
 	}
 }

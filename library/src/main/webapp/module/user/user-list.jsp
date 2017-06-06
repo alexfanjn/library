@@ -47,7 +47,7 @@
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
-			<a href="javascript:;" onclick="usersDelete()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 用户删除</a> 
+			<a href="javascript:;" onclick="usersDelete()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除用户</a> 
 			<a href="javascript:;" onclick="user_add('添加用户','user-add.jsp','800','400')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
 		</span>
 	</div>

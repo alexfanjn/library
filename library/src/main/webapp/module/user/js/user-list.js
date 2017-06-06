@@ -18,7 +18,7 @@ function users_edit(data) {
 }
 
 /* 批量删除 */
-function booksDelete() {
+function usersDelete() {
 	var obj = $("input[name^='checkbox_']:checked");
 	if (obj.length == 0) {
 		layer.msg('请最少选择一条记录！', {
@@ -35,7 +35,7 @@ function booksDelete() {
 	var ids = values.join(",");
 	$.ajax({
 		"type" : 'get',
-		"url" : '/library/book/deleteBook.do',
+		"url" : '/library/user/deleteUser.do',
 		"dataType" : "json",
 		"data" : {
 			"ids" : ids
@@ -76,7 +76,7 @@ function initDataTable() {
 		"bServerSide" : true,// 服务端传分页table参数
 		"aoColumns" : [// 表格数据填充
 				{
-					"mDataProp" : "b_id",
+					"mDataProp" : "u_id",
 					"sClass" : "text-c",
 					"mRender" : function(data, type, full) {
 						var html = '<input type="checkbox" value="'

@@ -40,7 +40,7 @@
 </insert>
 
 <!-- 删除和批量删除 array:表示参数是数组类型 -->
-<delete id="deleteUserById" parameterType="string">
+<delete id="deleteUsersById" parameterType="string">
 	DELETE FROM 
 		user 
 	WHERE 

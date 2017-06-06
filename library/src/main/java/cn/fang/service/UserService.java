@@ -12,7 +12,7 @@ public interface UserService
 	public String updateUser(User user);
 	
 	//根据id删除书籍记录
-	public String deleteUserById(String[] id);
+	public String deleteUsersById(String[] id);
 	
 	//根据id获得某个书籍的具体信息
 	public User getUserById(int id);
