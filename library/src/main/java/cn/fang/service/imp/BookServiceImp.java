@@ -93,4 +93,13 @@ public class BookServiceImp implements BookService
 		return bookDao.getBooks(count);
 	}
 
+	@Override
+	public String returnBook(int id)
+	{
+		int tag = bookDao.uodateBookStatusById(id,0);
+		if(tag == 1)
+			return "200";
+		return "300";
+	}
+
 }

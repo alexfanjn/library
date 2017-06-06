@@ -36,6 +36,14 @@
 		b.b_location = #{location}
 		where b.b_id = #{id}
 	</update>
+	
+	<!-- bit类型可以用int做参数吗 -->
+	<update id="uodateBookStatusById" parameterType="int">
+		update book b 
+		set 
+		b.b_isBorrow = #{status}
+		where b.b_id = #{id}
+	</update>
 
 	<insert id="addBook" parameterType="cn.fang.model.Book">
 		insert into

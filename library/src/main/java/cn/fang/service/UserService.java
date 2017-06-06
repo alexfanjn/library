@@ -16,4 +16,5 @@ public interface UserService
 	
 	//根据id获得某个书籍的具体信息
 	public User getUserById(int id);
+
 }

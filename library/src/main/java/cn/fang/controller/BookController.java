@@ -75,4 +75,12 @@ public class BookController
 		books = bookService.getBooks(page);
 		return books;
 	}
+	
+	//根据id修改书籍的  status
+	@RequestMapping(value = "/updateBookStatus", method = RequestMethod.GET)
+	@ResponseBody
+	public String updateBookStatusById(int id)
+	{
+		return bookService.returnBook(id);
+	}
 }
