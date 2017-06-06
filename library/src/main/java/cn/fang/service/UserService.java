@@ -13,4 +13,7 @@ public interface UserService
 	
 	//根据id删除书籍记录
 	public String deleteUserById(String[] id);
+	
+	//根据id获得某个书籍的具体信息
+	public User getUserById(int id);
 }

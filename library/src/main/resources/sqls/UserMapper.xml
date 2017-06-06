@@ -23,6 +23,15 @@
 	where u_id = #{id};
 </select>
 
+<update id="updateUserById" parameterType="cn.fang.model.User">
+	update User u 
+	set 
+	u.u_name = #{name},
+	u.u_major = #{major},
+	u.u_userClass = #{userClass}
+	where u.u_id = #{id}
+</update>
+
 
 <insert id="addUser" parameterType="cn.fang.model.User">
 	insert into

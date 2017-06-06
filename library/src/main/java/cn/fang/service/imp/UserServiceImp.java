@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import cn.fang.dao.UserDao;
+import cn.fang.model.Book;
 import cn.fang.model.User;
 import cn.fang.service.UserService;
 
@@ -54,6 +55,12 @@ public class UserServiceImp implements UserService
 		}else{
 			return "500";
 		}
+	}
+
+	@Override
+	public User getUserById(int id)
+	{
+		return userDao.getUserById(id);
 	}
 
 }

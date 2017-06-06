@@ -19,4 +19,7 @@ public interface UserDao
 	
 	//根据id删除记录
 	public boolean deleteUsersById(String[] ids);
+	
+	//根据id获取对应用户的具体信息
+	public User getUserById(int id);
 }

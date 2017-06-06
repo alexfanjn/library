@@ -13,8 +13,8 @@ function user_add(title, url, w, h) {
 }
 
 /*图书-修改*/
-function book_edit(data) {
-	layer_show("修改图书", "/library/book/showbook.do?id=" + data, "", 510);
+function users_edit(data) {
+	layer_show("修改用户信息", "/library/user/showuser.do?id=" + data, "", 510);
 }
 
 /* 批量删除 */
@@ -109,7 +109,7 @@ function initDataTable() {
 		"columnDefs" : [// 后加载填充自定义列内容
 		{
 			"targets" : [ 5 ],
-			"data" : "b_id",
+			"data" : "u_id",
 			"sClass" : "text-c",
 			"mRender" : function(data, type, full) {
 				var html = '';

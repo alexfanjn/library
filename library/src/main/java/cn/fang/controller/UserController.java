@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import cn.fang.model.Book;
 import cn.fang.model.User;
@@ -18,6 +19,16 @@ public class UserController
 {
 	@Resource
 	public UserService userService;
+	
+	@RequestMapping("/showuser.do")
+	public ModelAndView showbook(@RequestParam("id") Integer id)
+	{
+		ModelAndView mv = new ModelAndView("/module/user/user-update.jsp");
+		User user = userService.getUserById(id);
+		mv.addObject("user", user);
+		return mv;
+	}
+	
 	
 	//新增用户
 	@RequestMapping(value="/addUser.do",method=RequestMethod.POST)
