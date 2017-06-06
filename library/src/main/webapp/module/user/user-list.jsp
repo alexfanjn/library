@@ -37,30 +37,30 @@
 <script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script>
 
 <!-- 自定义js -->
-<script type="text/javascript" src="js/book-list.js"></script>
+<script type="text/javascript" src="js/user-list.js"></script>
 
-<title>书籍列表</title>
+<title>用户列表</title>
 
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 书籍管理 <span class="c-gray en">&gt;</span> 书籍列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 用户列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> 
 		<span class="l">
-			<a href="javascript:;" onclick="booksDelete()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-			<a href="javascript:;" onclick="book_add('添加图书','book-add.jsp','800','400')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加图书</a>
+			<a href="javascript:;" onclick="usersDelete()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 用户删除</a> 
+			<a href="javascript:;" onclick="user_add('添加用户','user-add.jsp','800','400')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加用户</a>
 		</span>
 	</div>
 	<table class="table table-border table-bordered table-bg table-sort">
 		<thead>
 			<tr>
-				<th scope="col" colspan="9">书籍列表</th>
+				<th scope="col" colspan="9">用户列表</th>
 			</tr>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
-				<th width="150">书名</th>
-				<th width="90">地址</th>
-				<th width="150">是否已借</th>
+				<th width="150">用户名</th>
+				<th width="90">专业</th>
+				<th width="150">年级</th>
 				<th width="130">创建时间</th>
 				<th width="100">操作</th>
 			</tr>

@@ -16,4 +16,18 @@
 	</select>
 	<!-- book表结束 -->
 	
+	<!-- user表开始 -->
+	<select id="getUserListForPage" parameterType="map" resultType="map">
+		SELECT 
+			* 
+		FROM 
+			user u 
+		ORDER BY u.u_createTime DESC
+	</select>
+
+	<select id="getUserListForPageCount" resultType="int">
+		SELECT COUNT(1) FROM user u 
+	</select>
+	<!-- user表结束 -->
+	
 </mapper>
