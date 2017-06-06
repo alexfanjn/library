@@ -2,6 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.fang.dao.UserDao">
 
+<resultMap type="cn.fang.model.User" id="UserResultMap">
+	<id column="u_id" property="id"></id>
+	<result column="u_name" property="name"></result>
+	<result column="u_major" property="major"></result>
+	<result column="u_userClass" property="userClass"></result>
+	<result column="u_createTime" property="createTime"></result>
+</resultMap>
+
+<select id="countById" parameterType="int" resultType="int">
+	select count(*) 
+	from user 
+	where u_id = #{id};
+	<!-- 是否需要返回值类型 -->
+</select>
+
+<select id="getUserById" parameterType="int" resultMap="UserResultMap">
+	select *
+	from user
+	where u_id = #{id};
+</select>
+
 
 <insert id="addUser" parameterType="cn.fang.model.User">
 	insert into

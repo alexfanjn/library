@@ -28,4 +28,22 @@ public class UserServiceImp implements UserService
 		return "200";// 新增成功
 	}
 
+	@Override
+	public String updateUser(User user)
+	{
+		// 首先根据id查看是否有此条记录
+		int count = userDao.countById(user.getId());
+		if (count == 0)
+			// 未找到此记录
+			return "301";
+		// 找到id为book.id的记录
+		// 通过update更新此条记录
+		int count1 = userDao.updateUserById(user);
+		if (count1 == 1)
+			// 修改成功
+			return "200";
+		// 服务器出错
+		return "500";
+	}
+
 }

@@ -12,7 +12,7 @@
 
 	<select id="countById" parameterType="int" resultType="int">
 		select count(*) 
-		from book 
+		from book
 		where b_id = #{id};
 		<!-- 是否需要返回值类型 -->
 	</select>
