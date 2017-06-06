@@ -21,8 +21,7 @@ public class UserController
 	public UserService userService;
 	
 	@RequestMapping("/showuser.do")
-	public ModelAndView showbook(@RequestParam("id") Integer id)
-	{
+	public ModelAndView showbook(@RequestParam("id") Integer id){
 		ModelAndView mv = new ModelAndView("/module/user/user-update.jsp");
 		User user = userService.getUserById(id);
 		mv.addObject("user", user);
@@ -33,24 +32,21 @@ public class UserController
 	//新增用户
 	@RequestMapping(value="/addUser.do",method=RequestMethod.POST)
 	@ResponseBody
-	public String addUser(User user)
-	{
+	public String addUser(User user){
 		return userService.addUser(user);
 	}
 	
 	// 修改用户参数
 	@RequestMapping(value = "/updateUser.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String updateUser(User user)
-	{
+	public String updateUser(User user){
 		return userService.updateUser(user);
 	}
 	
 	// 根据id删除用户&&批量删除
 	@RequestMapping(value = "/deleteUser.do", method = RequestMethod.GET)
 	@ResponseBody
-	public String deleteUser(@RequestParam(value = "ids", required = true) String ids)
-	{
+	public String deleteUser(@RequestParam(value = "ids", required = true) String ids){
 		String[] idsArg = ids.split(",");
 		return userService.deleteUsersById(idsArg);
 	}

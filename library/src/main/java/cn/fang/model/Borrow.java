@@ -10,7 +10,7 @@ public class Borrow
 	//用户id
 	private int userId;
 	
-	//借书日期
+	//借出日期
 	private Date outDate;
 	
 	//记录创建时间

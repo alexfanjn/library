@@ -3,4 +3,11 @@
 <mapper namespace="cn.fang.dao.BorrowDao">
 
 
+
+<insert id="insert" parameterType="cn.fang.model.Borrow">
+	insert into
+	borrow(b_bookId,b_userId,b_outDate,b_createTime)
+	values(#{bookId},#{userId},#{outDate},#{createTime});
+</insert>
+
 </mapper>

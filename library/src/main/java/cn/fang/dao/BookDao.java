@@ -18,6 +18,9 @@ public interface BookDao
 	//根据id更新记录
 	public int updateBookById(Book book);
 	
+	//根据id更改书籍状态
+	public int uodateBookStatusById(int id,int status);
+	
 	//根据id删除记录
 	public boolean deleteBookById(String[] ids);
 	
