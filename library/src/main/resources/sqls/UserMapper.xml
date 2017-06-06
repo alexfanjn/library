@@ -3,4 +3,10 @@
 <mapper namespace="cn.fang.dao.UserDao">
 
 
+<insert id="addUser" parameterType="cn.fang.model.User">
+	insert into
+	book(u_name,u_major,u_userClass,u_createTime)
+	values(#{name},#{major},#{userClass},#{createTime});
+</insert>
+
 </mapper>
