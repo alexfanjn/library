@@ -24,6 +24,7 @@ public class UserController
 	@ResponseBody
 	public String addUser(User user)
 	{
+		System.out.println("ininininininininin");
 		return userService.addUser(user);
 	}
 	
