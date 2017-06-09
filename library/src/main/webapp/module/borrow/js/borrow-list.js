@@ -3,10 +3,12 @@ $(function() {// jq
 	initDataTable();
 })
 
-/* 图书-添加 */
+/* 借书-添加 */
 function borrow_add(title, url, w, h) {
 	layer_show(title, url, w, h);
 }
+
+
 
 function initDataTable() {
 	table = $('.table-sort').dataTable({
@@ -35,22 +37,22 @@ function initDataTable() {
 						return html;
 					}
 				}, {
-					"mDataProp" : "u.u_name",
+					"mDataProp" : "u_name",
 					"sClass" : "text-c",
 				}, {
-					"mDataProp" : "u.u_major",
+					"mDataProp" : "u_major",
 					"sClass" : "text-c",
 				}, {
-					"mDataProp" : "u.u_userClass",
+					"mDataProp" : "u_userClass",
 					"sClass" : "text-c",
 				},{
-					"mDataProp" : "b.b_bookName",
+					"mDataProp" : "b_bookName",
 					"sClass" : "text-c",
 				}, {
-					"mDataProp" : "b.b_location",
+					"mDataProp" : "b_location",
 					"sClass" : "text-c",
 				}, {
-					"mDataProp" : "b1.b_outDate",
+					"mDataProp" : "b_outDate",
 					"sClass" : "text-c",
 				},
 
