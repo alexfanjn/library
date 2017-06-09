@@ -9,4 +9,7 @@ public interface BorrowDao
 	
 	//根据id修改对应书籍的isBorrow
 	public int updateStatusById(int id);
+	
+	//根据id批量删除借书记录
+	public boolean deleteBorrowsById(String[] ids);
 }

@@ -55,4 +55,13 @@ public class BorrowServiceImp implements BorrowService
 		}
 	}
 
+	@Override
+	public String deleteBorrowsById(String[] ids)
+	{
+		if(borrowDao.deleteBorrowsById(ids))
+			return "200";
+		else
+			return "300";
+	}
+
 }

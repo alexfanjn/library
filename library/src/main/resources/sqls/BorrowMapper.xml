@@ -10,4 +10,16 @@
 	values(#{bookId},#{userId},#{outDate},#{createTime});
 </insert>
 
+<!-- 删除和批量删除 array:表示参数是数组类型 -->
+<delete id="deleteBorrowsById" parameterType="string">
+	DELETE FROM 
+		borrow 
+	WHERE 
+		b_bookId 
+	IN 
+	<foreach collection="array" item="bid" open="(" separator="," close=")">
+		#{bid}
+	</foreach>
+</delete>
+
 </mapper>
