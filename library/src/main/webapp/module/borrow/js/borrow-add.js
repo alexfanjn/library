@@ -5,14 +5,9 @@ $(function(){
 		increaseArea: '20%'
 	});
 	
-	$("#form-user-add").validate({
+	$("#form-borrow-add").validate({
 		rules:{
-			bookName:{
-				required:true,
-				minlength:2,
-				maxlength:16
-			},
-			// location
+
 		},
 		onkeyup:false,
 		focusCleanup:true,
@@ -34,7 +29,31 @@ $(function(){
 						});
 						return;
 					}
-					layer.alert('用户已存在!', {
+					if (data == '301') {
+						layer.alert('用户不存在，借书失败', {
+							icon : 1,
+							shade : 0.5,
+							time : 3000
+						});
+						return;
+					}
+					if (data == '302') {
+						layer.alert('书籍id不存在，借书失败', {
+							icon : 1,
+							shade : 0.5,
+							time : 3000
+						});
+						return;
+					}
+					if (data == '303') {
+						layer.alert('此书已借出，借书失败', {
+							icon : 1,
+							shade : 0.5,
+							time : 3000
+						});
+						return;
+					}
+					layer.alert('系统错误!', {
 						icon : 5,
 						shade : 0.5,
 						time : 3000

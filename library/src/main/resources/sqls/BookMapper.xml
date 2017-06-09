@@ -41,8 +41,8 @@
 	<update id="uodateBookStatusById" parameterType="int">
 		update book b 
 		set 
-		b.b_isBorrow = #{status}
-		where b.b_id = #{id}
+		b.b_isBorrow = #{1}
+		where b.b_id = #{0}
 	</update>
 
 	<insert id="addBook" parameterType="cn.fang.model.Book">

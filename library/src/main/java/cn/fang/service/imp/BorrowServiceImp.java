@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import cn.fang.dao.BookDao;
 import cn.fang.dao.BorrowDao;
+import cn.fang.dao.UserDao;
+import cn.fang.model.Book;
 import cn.fang.model.Borrow;
 import cn.fang.service.BorrowService;
 
@@ -18,10 +20,25 @@ public class BorrowServiceImp implements BorrowService
 	private BorrowDao borrowDao;
 	@Resource
 	private BookDao bookDao;
+	@Resource
+	private UserDao UserDao;
 	
 	@Override
 	public String addBorrow(Borrow borrow)
 	{
+		//查询用户id是否存在
+		int count1 = UserDao.countById(borrow.getUserId());
+		if(count1 == 0)//不存在对应学生id
+			return "301";
+		
+		//继续查询实际id是否存在
+		int count2 = bookDao.countById(borrow.getBookId());
+		if(count2 == 0)//不存在对应书籍id
+			return "302";
+		
+		Book book = bookDao.getBookById(borrow.getBookId());
+		if(book.isIsBorrow() == true)//已借出
+			return "303";
 		//获取系统当前时间
 		borrow.setCreateTime(new Date());
 		borrow.setOutDate(new Date());

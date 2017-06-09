@@ -17,6 +17,7 @@ public class BorrowController
 	@Resource
 	public BorrowService borrowService;
 	
+	
 	@RequestMapping(value="/addBorrow",method=RequestMethod.POST)
 	@ResponseBody
 	public String addBorrow(Borrow borrow){
