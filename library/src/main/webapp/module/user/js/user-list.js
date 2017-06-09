@@ -7,12 +7,12 @@ $(function() {// jq
 	});
 })
 
-/* 图书-添加 */
+/* 用户-添加 */
 function user_add(title, url, w, h) {
 	layer_show(title, url, w, h);
 }
 
-/*图书-修改*/
+/*用户-修改*/
 function users_edit(data) {
 	layer_show("修改用户信息", "/library/user/showuser.do?id=" + data, "", 510);
 }
