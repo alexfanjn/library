@@ -99,24 +99,17 @@ function initDataTable() {
 				}, {
 					"mDataProp" : "b_outDate",
 					"sClass" : "text-c",
+				}, {
+					"mDataProp" : "b_isBorrow",
+					"sClass" : "text-c",
+					"mRender" : function(data, type, full) {
+						if (data == false) {
+							return '<span class="label label-success radius">已归还</span>';
+						} else {
+							return '<span class="label label-fail radius">未归还</span>';
+						}
+					}
 				},
-
-		],
-		"columnDefs" : [// 后加载填充自定义列内容
-		{
-			"targets" : [ 7 ],
-			"data" : "u_id",  //?????????????????????????????
-			"sClass" : "text-c",
-			"mRender" : function(data, type, full) {
-				var html = '';
-				// 编辑用户-按钮
-				html += '<a style="text-decoration: none" onClick="users_edit(\''
-						+ data
-						+ '\')" href="javascript:void(0);" title="还书">';
-				html += '<i class="Hui-iconfont">&#xe6df;</i></a>';
-				return html;
-			}
-		}
 
 		],
 		/*sAjaxSource在这里没用到*/

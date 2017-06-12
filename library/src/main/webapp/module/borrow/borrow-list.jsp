@@ -64,7 +64,7 @@
 				<th width="150">书名</th>
 				<th width="150">位置</th>
 				<th width="130">借书时间</th>
-				<th width="100">还书</th>
+				<th width="100">是否归还</th>
 			</tr>
 		</thead>
 		<tbody>

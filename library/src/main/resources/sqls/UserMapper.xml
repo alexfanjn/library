@@ -36,7 +36,7 @@
 <insert id="addUser" parameterType="cn.fang.model.User">
 	insert into
 	user(u_name,u_major,u_userClass,u_createTime)
-	values(#{name},#{major},#{userClass},#{createTime});
+	values(#{name},#{major},#{userClass},#{createTime}); 
 </insert>
 
 <!-- 删除和批量删除 array:表示参数是数组类型 -->

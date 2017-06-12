@@ -34,7 +34,7 @@
 	<!-- borrow表开始 -->
 	<select id="getBorrowListForPage" parameterType="map" resultType="map">
 		SELECT 
-			b.b_id,u.u_id,u.u_name,u.u_major,u.u_userClass,b.b_bookName,b.b_location,b1.b_outDate 
+			b.b_id,u.u_id,u.u_name,u.u_major,u.u_userClass,b.b_bookName,b.b_location,b1.b_outDate,b.b_isBorrow 
 		FROM 
 			user u,borrow b1,book b
 		where b1.b_bookId = b.b_id and b1.b_userId = u.u_id 
