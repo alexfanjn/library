@@ -64,49 +64,5 @@
 <div class="footer">Copyright @JY fang</div>
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
-
-<script type="text/javascript">
-$(function(){	
-	$("#form-login").validate({
-		onkeyup:false,
-		focusCleanup:true,
-		success:"valid",
-		submitHandler:function(form){
-			
-			$.ajax({
-				url : "/library/login/test.do",
-				type : "post",
-				dataType : "json",
-				data : $('#form-login').serialize(),
-				success : function(data) {
-					parent.window.table.fnDraw(false);
-					if (data == '200') {
-						layer.alert('登录成功', {
-							icon : 1,
-							shade : 0.5,
-							time : 3000
-						});
-						return;
-					}
-					layer.alert('登录失败!', {
-						icon : 5,
-						shade : 0.5,
-						time : 3000
-					});
-				},
-				error : function() {
-					layer.alert('操作失败', {
-						icon : 2,
-						shade : 0.5,
-						time : 3000
-					});
-				}
-			});
-			return false;
-			
-		}
-	});
-});
-</script>
 </body>
 </html>
