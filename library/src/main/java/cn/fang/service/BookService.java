@@ -17,10 +17,6 @@ public interface BookService{
 	//根据id获得某个书籍的具体信息
 	public Book getBookById(int id);
 	
-	//根据页数获取书籍信息list
-	public List<Book> getBooks(int page);
-	
-	
 	//还书
 	public String returnBook(int id);
 }

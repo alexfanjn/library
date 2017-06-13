@@ -86,14 +86,6 @@ public class BookServiceImp implements BookService
 	}
 
 	@Override
-	public List<Book> getBooks(int page)
-	{
-		// 将页数page转化为记录起始条数,此处限定每页10条记录
-		int count = 10 * (page - 1);
-		return bookDao.getBooks(count);
-	}
-
-	@Override
 	public String returnBook(int id)
 	{
 		int tag = bookDao.uodateBookStatusById(id,0);

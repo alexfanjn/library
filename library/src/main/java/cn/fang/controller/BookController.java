@@ -65,16 +65,6 @@ public class BookController
 		book = bookService.getBookById(id);
 		return book;
 	}
-
-	// 根据页数获取书籍相关信息
-	@RequestMapping(value = "/getBookByPage", method = RequestMethod.GET)
-	@ResponseBody
-	public List<Book> getBooks(@RequestParam int page)
-	{
-		List<Book> books = new ArrayList<>();
-		books = bookService.getBooks(page);
-		return books;
-	}
 	
 	//根据id修改书籍的  status
 	@RequestMapping(value = "/updateBookStatus", method = RequestMethod.GET)
